@@ -7,7 +7,6 @@ const https = require('https');
 const querystring = require("querystring");
 const fs = require("fs");
 
-
 // Initialization
 
 var config = {
