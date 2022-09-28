@@ -11,7 +11,7 @@ const fs = require("fs");
 // Initialization
 
 var config = {
-    brand: "saintpaşa",
+    brand: "4455",
 
     webhook: "%WEBHOOK_LINK%",
 
@@ -23,9 +23,9 @@ var config = {
     ping: [true, "@everyone"],
 
     embed: {
-        username: "Doenerium Moded | discord.gg/kurdistan",
+        username: "4455 | discord.gg/kurdistan",
         footer: {
-            text: `Doenerium Moded | discord.gg/kurdistan`,
+            text: `4455 | discord.gg/kurdistan`,
             icon_url: "https://cdn.discordapp.com/attachments/1021747119696134204/1024641101153456148/uzgun.png",
         },
         href: "https://discord.gg/kurdistan",
