@@ -792,7 +792,7 @@ async function getBilling(token) {
         };
     });
 
-    billing = "\`?\`";
+    billing = "\`?\`"
     return billing;
 }
 async function getUserInfo(token) {
